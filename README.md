@@ -6,7 +6,7 @@
 
 ## 🚀 About This Repository
 
-SilverOps is not just a repository, but a reflection of my growth as a **DevOps Engineer**. It holds my projects, experiments, and hands-on work to:
+SilverOps is not just a repository, but a reflection of my transition as a **DevOps Engineer**. It holds my projects, experiments, and hands-on work to:
 
 - **CI/CD Pipelines**  
 - **Automation with Ansible, Terraform, and Jenkins**  
