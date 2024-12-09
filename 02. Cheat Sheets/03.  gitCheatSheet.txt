@@ -145,8 +145,8 @@ git push origin --delete one					#delete the remote "one" branch
 
 git fetch origin main
 git pull origin main --rebase					#This flag ensures that your local changes will be applied on top of the changes pulled from the remote branch.
-git push <remote-name> <branch-name>            #upload # git push origin main
-git pull <remote-name> <branch-name>            #download #does not require authentication #Use -u when you're pushing a branch for the first time and want to make future git push/git pull commands more convenient.
+git push <remote-name> <branch-name>            #upload # git push origin main # Use -u when you're pushing a branch for the first time and want to make future git push/git pull commands more convenient.
+git pull <remote-name> <branch-name>            #download #does not require authentication 
 git push origin one								#pushed, even there was no "one" branch in github repo. Created & pushed.
 git push origin main --tags
 
