@@ -1,6 +1,6 @@
 # LocalOps  
 
-**LocalOps** is a hands-on repository dedicated to exploring, understanding, and demonstrating pre-containerization workflows for multi-tier applications. It features my work with **2-tier** and **3-tier** applications in major programming languages like **Java**, **Python**, **.NET**, and **JavaScript**, showcasing how to build, run, and integrate applications locally before containerizing them with tools like Docker.  
+**LocalOps** is a hands-on repository dedicated to exploring, understanding, and demonstrating pre-containerization workflows for multi-tier applications. It features my work with **2-tier** and **3-tier** applications in major programming languages like **Java**, **Python**, **.NET**, and **JavaScript**, showcasing how to build, run, and integrate applications **locally** before containerizing them with tools like Docker.  
 
 ---
 
