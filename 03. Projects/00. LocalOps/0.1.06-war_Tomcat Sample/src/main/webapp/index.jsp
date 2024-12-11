@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevOps Shack</title>
+  <title>IbtisamOps</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -66,7 +66,7 @@
 </head>
 <body>
   <header>
-    <h1>DevOps Shack</h1>
+    <h1>IbtisamOps</h1>
     <p>Your one-stop destination for all things DevOps!</p>
   </header>
   <div class="container">
