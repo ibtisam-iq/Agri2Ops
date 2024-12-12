@@ -104,7 +104,7 @@ To install and set up PostgreSQL, follow these steps:
    GRANT ALL PRIVILEGES ON DATABASE my_database TO root;
    ```
 
-5. **Connect to the new database:**
+5. **Connect/switch to the new database:**
 
    ```sql
    \c my_database
