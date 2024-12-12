@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 
 # Virtual environment
-venv/
+IbtisamOps/
 
 # Environment variables and secrets (optional but recommended)
 .env
