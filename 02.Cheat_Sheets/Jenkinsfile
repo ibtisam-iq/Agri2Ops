@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    tools {
+        maven "maven3"
+    }
+
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git branch: 'ibtisam', url: 'https://github.com/ibtisamops/0.1.1_Boardgame.git'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+        stage('Install') {
+            steps {
+                sh 'mvn install'
+            }
+        }
+    }
+}
+
