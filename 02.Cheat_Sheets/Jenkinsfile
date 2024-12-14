@@ -7,6 +7,7 @@ It spans multiple lines.
 
 pipeline {
     agent any
+//  agent {label 'slave-1'}
 
     tools {
         maven "maven3"
@@ -17,6 +18,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 git branch: 'ibtisam', url: 'https://github.com/ibtisamops/0.1.1_Boardgame.git'
+//              git branch: "${params.Branch_name}", url: 'https://github.com/ibtisamops/0.1.1_Boardgame.git'
             }
         }
 
