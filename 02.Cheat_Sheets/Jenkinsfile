@@ -50,7 +50,9 @@ pipeline {
 
         stage('Compile') {
             steps {
+                dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
                 sh 'mvn compile'
+                }
             }
         }
 
@@ -71,11 +73,23 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               deploy adapters: [tomcat9(credentialsId: 'tomcat-server', path: '', url: 'http://localhost:8080/')], contextPath: 'hello-world', onFailure: false, war: 'target/*.war' 
-            }
-        }
+                // deoloy to tomcat server
+                deploy adapters: [tomcat9(credentialsId: 'tomcat-server', path: '', url: 'http://localhost:8080/')], contextPath: 'hello-world', onFailure: false, war: 'target/*.war'
+               // deploy to multi env
+                script {
+                if (params.env == 'dev') {
+                    sh 'mvn clean deploy'
+                }
+                else if (params.env == 'prod') {
+                    sh 'mvn clean deploy'
+                }
+                else {
+                    echo 'Invalid environment'
+                }
+                }
         stage('Install') {
             steps {
+                timeout(time: 10, unit: 'SECONDS') {
                 echo "Love you, Sweetheart Ibtisam"
             }
         }
@@ -90,5 +104,13 @@ pipeline {
             build 'Job C' // mention downstream job name
         }
     }
+    // to clean up the workspace after the job is done
+    post {
+        always {
+    // One or more steps need to be included within each condition's block.
+            cleanWs()
+    }
+}
+
 }
 
