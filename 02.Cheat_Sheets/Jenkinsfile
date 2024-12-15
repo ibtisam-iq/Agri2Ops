@@ -55,6 +55,10 @@ pipeline {
         }
 
         stage('Test') {
+            // executes this stage only if any change happens in 'path_to_file.txt'  
+            when {
+                changeset 'path_to_file.txt'
+            }
             steps {
                 echo 'mvn test'
             }
