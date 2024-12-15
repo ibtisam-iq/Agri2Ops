@@ -6,19 +6,45 @@ It spans multiple lines.
 */
 
 pipeline {
-    agent any
-//  agent {label 'slave-1'}
+    agent any //  agent {label 'slave-1'} // directive
 
-    tools {
+    tools { 
         maven "maven3"
         jdk "jdk17"
     }
+    parameters {            // use this directive when the pipeline is not parameterized.
+        choice choices: ['main', 'dev', 'ibtisam'], description: 'write description', name: 'Branch_name'
+//      string defaultValue: 'main', description: 'enter description', name: 'Branch_name'
+    }
 
     stages {
+        stage('Hello Parallel') {
+            parallel {
+                stage('Stage One') {
+                    steps {
+                        echo 'Running Stage One'
+                    }
+                }
+                stage('Stage Two') {
+                    steps {
+                        echo 'Running Stage Two'
+                    }
+                }
+            }
+        }
+        stage('Hello World') {              // copy 5 lines from stage('Hello') and paste for new stage
+            steps {
+                echo "Hello World"          // it runs inside Jenkins itself.
+            }       
+        }
+        stage('Hello sh') {
+            steps {
+                sh 'echo "Hello World"'     // it runs on the Jenkins agent/slave.
+            }       
+        }
         stage('Git Checkout') {
             steps {
-                git branch: 'ibtisam', url: 'https://github.com/ibtisamops/0.1.1_Boardgame.git'
-//              git branch: "${params.Branch_name}", url: 'https://github.com/ibtisamops/0.1.1_Boardgame.git'
+                git branch: "${params.Branch_name}", url: 'Github URL' // Use when the pipeline is parameterized.
             }
         }
 
@@ -30,19 +56,34 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                echo 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
-                sh 'mvn package'
+                sh "mvn clean package"
+            }
+        }
+        stage('Deploy') {
+            steps {
+               deploy adapters: [tomcat9(credentialsId: 'tomcat-server', path: '', url: 'http://localhost:8080/')], contextPath: 'hello-world', onFailure: false, war: 'target/*.war' 
             }
         }
         stage('Install') {
             steps {
-                sh 'mvn install'
+                echo "Love you, Sweetheart Ibtisam"
             }
+        }
+    }
+    post {
+        success {
+            // One or more steps need to be included within each condition's block.
+            build 'Job B' // mention downstream job name
+        }
+        failure {
+            // One or more steps need to be included within each condition's block.
+            build 'Job C' // mention downstream job name
         }
     }
 }
