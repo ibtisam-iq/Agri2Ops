@@ -38,12 +38,14 @@ pipeline {
                 dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
                     withSonarQubeEnv('sonar-server') {                 // server name configured in jenkins
                         sh '''
-                        $SCANNER_HOME/bin/sonar-scanner \             
+                        $SCANNER_HOME/bin/sonar-scanner \              
+                        '''
+                        /*
                             -Dsonar.projectName=Boardgame \
                             -Dsonar.projectKey=boardgame \
                             -Dsonar.java.binaries=target \
-                        '''
-                       //   -Dsonar.branch.name=ibtisam
+                            -Dsonar.branch.name=ibtisam
+                        */
                     }
                 }
             }
