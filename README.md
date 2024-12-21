@@ -1,12 +1,12 @@
-# SilverOps
+# Agri2Ops
 
-**Welcome to SilverOps** — a collection of my DevOps learning journey, tools, and automation skills. This repository is a testament to my transition from agriculture to IT, with a focus on **DevOps**, and automation. It showcases my journey of continuous improvement, achieving excellence, and embracing new technologies.
+**Welcome to Agri2Ops** — a collection of my DevOps learning journey, tools, and automation skills. This repository is a testament to my transition from agriculture to IT, with a focus on **DevOps**, and automation. It showcases my journey of continuous improvement, achieving excellence, and embracing new technologies.
 
 ---
 
 ## 🚀 About This Repository
 
-SilverOps is not just a repository, but a reflection of my transition as a **DevOps Engineer**. It holds my projects, experiments, and hands-on work to:
+Agri2Ops is not just a repository, but a reflection of my transition as a **DevOps Engineer**. It holds my projects, experiments, and hands-on work to:
 
 - **CI/CD Pipelines**  
 - **Automation with Ansible, Terraform, and Jenkins**  
@@ -20,7 +20,7 @@ This is a living document and will continue to evolve as I learn and work on new
 
 ## 🎯 My Journey
 
-**SilverOps** represents my commitment to mastering IT operations and automation. From earning a Silver Medal to excelling in DevOps, this repository reflects my passion for driving operational excellence, cloud technologies, and continuous improvement. The name **SilverOps** serves as a reminder of the dedication and hard work that fuels my journey toward success in IT.
+**Agri2Ops** represents my commitment to mastering IT operations and automation. From earning a Silver Medal in Agriculture to excelling in DevOps, this repository reflects my passion for driving operational excellence, cloud technologies, and continuous improvement.
 
 ---
 
