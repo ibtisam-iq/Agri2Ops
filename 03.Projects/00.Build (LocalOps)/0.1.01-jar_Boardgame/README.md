@@ -54,25 +54,25 @@ This web application displays lists of board games and their reviews. While anyo
 
 Root Level
 
-.github/workflows/maven.yml (GitHub Actions workflow file)
+1. .github/workflows/maven.yml (GitHub Actions workflow file)
 This file is used to configure GitHub Actions for CI/CD.
 maven.yml is a workflow definition file that automates Maven-based build tasks (e.g., build, test, deploy).
 
-.gitignore
+2. .gitignore
 Specifies files and directories that Git should ignore.
 Typically includes files like logs, IDE settings, and other transient files.
 
-.mvn/wrapper
+3. .mvn/wrapper
 maven-wrapper.properties: Configuration for the Maven wrapper, including version and distribution URL.
 
-mvnw / mvnw.cmd
+4. mvnw / mvnw.cmd
 Shell and batch scripts for running the Maven wrapper on Unix/Linux (mvnw) or Windows (mvnw.cmd).
 
-pom.xml
+5. pom.xml
 Maven's Project Object Model file.
 Defines dependencies, plugins, and build configurations for the project.
 
-README.md
+6. README.md
 A Markdown file providing project documentation, including purpose, setup instructions, and usage.
 
 src/main: Main Application Code
