@@ -115,19 +115,19 @@ src/main: Main Application Code
             secured: Templates for secured areas (e.g., adding games, reviews).
             Subdirectories like manager and user contain role-specific templates.
 
-src/test: Test Code
+**src/test: Test Code**
 
 java/com/javaproject
-  DatabaseServiceProjectApplicationTests.java: Integration tests for the application.
-  TestController.java: Unit tests for controller logic.
-  TestDatabase.java: Unit tests for database interactions.
+- DatabaseServiceProjectApplicationTests.java: Integration tests for the application.
+- TestController.java: Unit tests for controller logic.
+- TestDatabase.java: Unit tests for database interactions.
 
 Summary
 
 Root-Level Files: Configurations for build tools (Maven)
 src/main: Contains the application code:
-  java: Core logic split into beans, controllers, database, and security. 
-  resources: Configuration, database schema, static assets, and view templates.
+- java: Core logic split into beans, controllers, database, and security. 
+- resources: Configuration, database schema, static assets, and view templates.
 src/test: Houses test cases for validating the application.
 
 You said:
