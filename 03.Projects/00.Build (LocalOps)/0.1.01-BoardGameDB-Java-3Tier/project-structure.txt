@@ -1,8 +1,5 @@
 ibtisam@mint-dell:~/git/Agri2Ops/03.Projects/00.Build (LocalOps)/0.1.01-BoardGameDB-Java-3Tier$ tree -a
 .
-├── .github
-│   └── workflows
-│       └── maven.yml
 ├── .gitignore
 ├── .mvn
 │   └── wrapper
