@@ -122,13 +122,15 @@ java/com/javaproject
 - TestController.java: Unit tests for controller logic.
 - TestDatabase.java: Unit tests for database interactions.
 
-Summary
+**Summary**
 
-Root-Level Files: Configurations for build tools (Maven)
-src/main: Contains the application code:
+*Root-Level Files*: Configurations for build tools (Maven)
+
+*src/main*: Contains the application code:
 - java: Core logic split into beans, controllers, database, and security. 
 - resources: Configuration, database schema, static assets, and view templates.
-src/test: Houses test cases for validating the application.
+
+*src/test*: Houses test cases for validating the application.
 
 You said:
 
