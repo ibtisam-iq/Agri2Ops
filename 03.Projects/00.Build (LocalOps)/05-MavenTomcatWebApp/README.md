@@ -128,10 +128,10 @@ This guide provides step-by-step instructions for installing Apache Tomcat 9.0.6
 3. **Add the following line before the closing `</tomcat-users>` tag:**
 
    ```xml
-   <user username="admin" password="admin1234" roles="admin-gui,manager-gui,manager-script"/>
+   <user username="ibtisam" password="ibtisam.1" roles="admin-gui,manager-gui,manager-script"/>
    ```
 
-   This creates an admin user with the username `admin` and the password `admin1234`. The user is assigned roles that allow access to the administrative and management interfaces.
+   This creates an admin user with the username `ibtisam` and the password `ibtisam.1`. The user is assigned roles that allow access to the administrative and management interfaces.
 
 ### 3. Create Start and Stop Scripts
 
