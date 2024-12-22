@@ -46,8 +46,8 @@ This web application displays lists of board games and their reviews. While anyo
 2. Open the project in your IDE of choice
 3. Run the application
 4. To use initial user data, use the following credentials.
-  - username: ibtisam      |     password: 123 (user role)
-  - username: ibtisamops   |     password: 12345  (manager role)
+  - username: **ibtisam**      |     password: **123** (user role)
+  - username: **ibtisamops**   |     password: **12345**  (manager role)
 5. You can also sign-up as a new user and customize your role to play with the application! 😊
 
 ## Project Structure
