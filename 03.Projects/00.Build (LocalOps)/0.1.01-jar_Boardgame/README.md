@@ -51,36 +51,29 @@ This web application displays lists of board games and their reviews. While anyo
 5. You can also sign-up as a new user and customize your role to play with the application! 😊
 
 ## Project Structure
+
 Root Level
 
-    .github/workflows/maven.yml
-        This file is used to configure GitHub Actions for CI/CD.
-        maven.yml is a workflow definition file that automates Maven-based build tasks (e.g., build, test, deploy).
+.github/workflows/maven.yml (GitHub Actions workflow file)
+This file is used to configure GitHub Actions for CI/CD.
+maven.yml is a workflow definition file that automates Maven-based build tasks (e.g., build, test, deploy).
 
-    .gitignore
-        Specifies files and directories that Git should ignore.
-        Typically includes files like logs, IDE settings, and other transient files.
+.gitignore
+Specifies files and directories that Git should ignore.
+Typically includes files like logs, IDE settings, and other transient files.
 
-    Jenkinsfile
-        Defines a pipeline for Jenkins, another CI/CD tool.
-        Includes stages like build, test, and deploy for the project.
+.mvn/wrapper
+maven-wrapper.properties: Configuration for the Maven wrapper, including version and distribution URL.
 
-    .mvn/wrapper
-        maven-wrapper.jar: A wrapper for Maven, enabling the project to use a specific version of Maven without requiring it to be installed.
-        maven-wrapper.properties: Configuration for the Maven wrapper, including version and distribution URL.
+mvnw / mvnw.cmd
+Shell and batch scripts for running the Maven wrapper on Unix/Linux (mvnw) or Windows (mvnw.cmd).
 
-    mvnw / mvnw.cmd
-        Shell and batch scripts for running the Maven wrapper on Unix/Linux (mvnw) or Windows (mvnw.cmd).
+pom.xml
+Maven's Project Object Model file.
+Defines dependencies, plugins, and build configurations for the project.
 
-    pom.xml
-        Maven's Project Object Model file.
-        Defines dependencies, plugins, and build configurations for the project.
-
-    README.md
-        A Markdown file providing project documentation, including purpose, setup instructions, and usage.
-
-    sonar-project.properties
-        Configuration file for SonarQube, a tool for analyzing code quality.
+README.md
+A Markdown file providing project documentation, including purpose, setup instructions, and usage.
 
 src/main: Main Application Code
 
@@ -118,18 +111,18 @@ src/main: Main Application Code
 
 src/test: Test Code
 
-    java/com/javaproject
-        DatabaseServiceProjectApplicationTests.java: Integration tests for the application.
-        TestController.java: Unit tests for controller logic.
-        TestDatabase.java: Unit tests for database interactions.
+java/com/javaproject
+  DatabaseServiceProjectApplicationTests.java: Integration tests for the application.
+  TestController.java: Unit tests for controller logic.
+  TestDatabase.java: Unit tests for database interactions.
 
 Summary
 
-    Root-Level Files: Configurations for build tools (Maven), CI/CD (GitHub Actions, Jenkins), and code quality (SonarQube).
-    src/main: Contains the application code:
-        java: Core logic split into beans, controllers, database, and security.
-        resources: Configuration, database schema, static assets, and view templates.
-    src/test: Houses test cases for validating the application.
+Root-Level Files: Configurations for build tools (Maven)
+src/main: Contains the application code:
+  java: Core logic split into beans, controllers, database, and security. 
+  resources: Configuration, database schema, static assets, and view templates.
+src/test: Houses test cases for validating the application.
 
 You said:
 
@@ -144,19 +137,6 @@ ChatGPT
 
 Let’s delve into the components you’re referring to:
 .mvn/wrapper
-
-    maven-wrapper.jar
-
-        This JAR file is the executable part of the Maven Wrapper.
-
-        It ensures that a specific Maven version is downloaded and used for the project.
-
-        Purpose:
-            Avoids compatibility issues with different Maven versions.
-            Ensures consistency across development environments and CI/CD pipelines.
-
-        Impact of Removal:
-            If you remove this file, developers must have Maven installed globally on their machines. The project won’t fail if Maven is present, but consistency issues might arise.
 
     maven-wrapper.properties
 
@@ -186,28 +166,18 @@ mvnw / mvnw.cmd
 
 Are These Mandatory for Java Projects?
 
-    Not Mandatory, but strongly recommended for the following reasons:
-        Consistency: Ensures all developers and CI/CD pipelines use the exact same Maven version.
-        Ease of Use: Simplifies onboarding since developers don’t need to install Maven globally.
-        Reproducibility: Helps avoid "it works on my machine" issues caused by Maven version differences.
-
-If These Are Removed, Will the Project Fail?
-
-    The project will not necessarily fail to run if:
-        Maven is installed globally.
-        The correct Maven version is used.
-
-    However, potential problems include:
-        Version Conflicts: If different developers use different Maven versions, builds might behave unpredictably.
-        Build Failures: Some plugins or dependencies might rely on specific Maven features that aren’t available in older versions.
+Not Mandatory, but strongly recommended for the following reasons:
+- Consistency: Ensures all developers and CI/CD pipelines use the exact same Maven version.
+- Ease of Use: Simplifies onboarding since developers don’t need to install Maven globally.
+- Reproducibility: Helps avoid "it works on my machine" issues caused by Maven version differences.
 
 Best Practice
 
 Even though these files aren’t mandatory, it’s best to keep them in Java-based projects that use Maven. They offer:
 
-    Version control for the build tool.
-    Improved developer experience.
-    Reliable builds across environments.
+- Version control for the build tool.
+- Improved developer experience.
+- Reliable builds across environments.
 
 Would you like to explore how these files function in more depth or examples of their usage?
 You said:
@@ -262,17 +232,6 @@ What Happens Without the Maven Wrapper?
 If the Maven Wrapper (mvnw) is removed:
 
     Pipeline Will Fail: Jenkins will throw an error like mvn: command not found since Maven isn’t installed.
-    Solutions:
-        Install Maven on Jenkins Globally: Configure Maven in Jenkins via Manage Jenkins -> Global Tool Configuration.
-        Manually Install Maven in Pipeline:
-            Add steps to download and set up Maven in the pipeline. For example:
-
-            sh '''
-            wget https://downloads.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
-            tar -xzf apache-maven-3.9.4-bin.tar.gz
-            export PATH=$PWD/apache-maven-3.9.4/bin:$PATH
-            mvn clean install
-            '''
 
 Why is Maven Wrapper Preferred?
 
@@ -293,6 +252,7 @@ ChatGPT said:
 ChatGPT
 
 Let’s break this portion of the mvnw script step by step to understand its purpose and functionality:
+
 1. Checking for maven-wrapper.jar
 
 if [ -r "$BASE_DIR/.mvn/wrapper/maven-wrapper.jar" ]; then
@@ -301,15 +261,15 @@ if [ -r "$BASE_DIR/.mvn/wrapper/maven-wrapper.jar" ]; then
     fi
 else
 
-    What’s Happening?
-        The script checks if the maven-wrapper.jar file exists (-r tests if the file is readable).
-        This file is critical for the Maven Wrapper to function since it contains the logic to download and invoke Maven.
+What’s Happening?
+- The script checks if the maven-wrapper.jar file exists (-r tests if the file is readable).
+- This file is critical for the Maven Wrapper to function since it contains the logic to download and invoke Maven.
 
-    Actions Based on the Check:
-        If the file is found:
-            Optionally, it prints a message (Found .mvn/wrapper/maven-wrapper.jar) if the environment variable MVNW_VERBOSE is set to true.
-        If the file is missing:
-            It moves to the else block to download the JAR file.
+Actions Based on the Check:
+- If the file is found:
+  - Optionally, it prints a message (Found .mvn/wrapper/maven-wrapper.jar) if the environment variable MVNW_VERBOSE is set to true.
+- If the file is missing:
+  - It moves to the else block to download the JAR file.
 
 2. Handling Missing maven-wrapper.jar
 
@@ -317,8 +277,8 @@ if [ "$MVNW_VERBOSE" = true ]; then
   echo "Couldn't find .mvn/wrapper/maven-wrapper.jar, downloading it ..."
 fi
 
-    What’s Happening?
-        If the file is missing, the script logs a message indicating it will download the JAR file. This message is displayed only if MVNW_VERBOSE is set to true for debugging purposes.
+What’s Happening?
+- If the file is missing, the script logs a message indicating it will download the JAR file. This message is displayed only if MVNW_VERBOSE is set to true for debugging purposes.
 
 3. Determining the Download URL
 
@@ -328,17 +288,15 @@ else
   jarUrl="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"
 fi
 
-    What’s Happening?
-        The script determines where to download the maven-wrapper.jar file:
-            If MVNW_REPOURL is set, it uses this custom repository URL to construct the JAR's download path.
-            If not, it defaults to Maven Central (https://repo.maven.apache.org).
+What’s Happening?
+The script determines where to download the maven-wrapper.jar file:
+- If MVNW_REPOURL is set, it uses this custom repository URL to construct the JAR's download path.
+- If not, it defaults to Maven Central (https://repo.maven.apache.org).
 
-    Key File Path:
-        The JAR is located in Maven repositories under:
-
-        org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar
-
-        The 3.1.0 version here refers to the version of the Maven Wrapper.
+Key File Path:
+The JAR is located in Maven repositories under:
+  - org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar
+  - The 3.1.0 version here refers to the version of the Maven Wrapper.
 
 4. Overriding URL via Properties
 
@@ -347,12 +305,12 @@ while IFS="=" read key value; do
   esac
 done < "$BASE_DIR/.mvn/wrapper/maven-wrapper.properties"
 
-    What’s Happening?
-        The script reads the maven-wrapper.properties file to check for a custom wrapperUrl value.
-        If wrapperUrl is defined, it overrides the jarUrl determined earlier.
+What’s Happening?
+- The script reads the maven-wrapper.properties file to check for a custom wrapperUrl value.
+- If wrapperUrl is defined, it overrides the jarUrl determined earlier.
 
-    Purpose:
-        Allows projects to specify an alternative location for the Maven Wrapper JAR, overriding defaults like Maven Central.
+Purpose:
+- Allows projects to specify an alternative location for the Maven Wrapper JAR, overriding defaults like Maven Central.
 
 5. Logging the Download URL
 
@@ -360,8 +318,8 @@ if [ "$MVNW_VERBOSE" = true ]; then
   echo "Downloading from: $jarUrl"
 fi
 
-    What’s Happening?
-        The script logs the download URL for the maven-wrapper.jar file, providing visibility into where it’s fetching the JAR from. Again, this only happens if MVNW_VERBOSE is enabled.
+What’s Happening?
+- The script logs the download URL for the maven-wrapper.jar file, providing visibility into where it’s fetching the JAR from. Again, this only happens if MVNW_VERBOSE is enabled.
 
 6. Setting the Path for maven-wrapper.jar
 
@@ -370,29 +328,17 @@ if $cygwin; then
   wrapperJarPath=`cygpath --path --windows "$wrapperJarPath"`
 fi
 
-    What’s Happening?
-        Defines the location to save the downloaded maven-wrapper.jar file.
-        If the script is running on a Cygwin environment (Windows compatibility layer for Unix tools), it converts the path to a Windows-compatible format using the cygpath command.
+What’s Happening?
+- Defines the location to save the downloaded maven-wrapper.jar file.
+- If the script is running on a Cygwin environment (Windows compatibility layer for Unix tools), it converts the path to a Windows-compatible format using the cygpath command.
 
 Summary of This Block
 
 This portion of mvnw ensures that:
 
-    The Maven Wrapper JAR exists. If it doesn’t:
-        It determines the appropriate download URL.
-        Downloads the JAR to .mvn/wrapper/maven-wrapper.jar.
-    Customization is supported via:
-        The MVNW_REPOURL environment variable.
-        The wrapperUrl property in maven-wrapper.properties.
-
-What Happens if This Fails?
-
-    If the JAR isn’t Found and Cannot Be Downloaded:
-        The Maven Wrapper won’t work.
-        The build will fail since mvnw relies on the JAR to invoke Maven.
-
-    What Can You Do?
-        Ensure the machine has internet access to download the file.
-        Pre-check the presence of maven-wrapper.jar in the repository.
-
-Would you like to explore how Maven downloads or utilizes this file further?
+- The Maven Wrapper JAR exists. If it doesn’t:
+  - It determines the appropriate download URL.
+  - Downloads the JAR to .mvn/wrapper/maven-wrapper.jar.
+- Customization is supported via:
+  - The MVNW_REPOURL environment variable.
+  - The wrapperUrl property in maven-wrapper.properties.
