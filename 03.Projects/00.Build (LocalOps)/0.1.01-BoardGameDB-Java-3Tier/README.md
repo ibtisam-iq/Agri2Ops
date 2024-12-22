@@ -1,4 +1,4 @@
-# BoardgameListingWebApp
+# BoardGameDB-Java-3Tier
 
 ## Description
 
