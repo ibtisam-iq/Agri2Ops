@@ -51,7 +51,6 @@ This web application displays lists of board games and their reviews. While anyo
 5. You can also sign-up as a new user and customize your role to play with the application! 😊
 
 ## Project Structure
-markdown
 Root Level
 
     .github/workflows/maven.yml
@@ -287,32 +286,9 @@ For a Jenkins server without Maven, the Maven Wrapper (mvnw) ensures your projec
 
 Would you like me to show how to write such a Jenkinsfile or explore alternatives?
 You said:
-please help me understand this portion of mvnw
+please help me understand mvnw.
 
-f [ -r "$BASE_DIR/.mvn/wrapper/maven-wrapper.jar" ]; then
-    if [ "$MVNW_VERBOSE" = true ]; then
-      echo "Found .mvn/wrapper/maven-wrapper.jar"
-    fi
-else
-    if [ "$MVNW_VERBOSE" = true ]; then
-      echo "Couldn't find .mvn/wrapper/maven-wrapper.jar, downloading it ..."
-    fi
-    if [ -n "$MVNW_REPOURL" ]; then
-      jarUrl="$MVNW_REPOURL/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"
-    else
-      jarUrl="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"
-    fi
-    while IFS="=" read key value; do
-      case "$key" in (wrapperUrl) jarUrl="$value"; break ;;
-      esac
-    done < "$BASE_DIR/.mvn/wrapper/maven-wrapper.properties"
-    if [ "$MVNW_VERBOSE" = true ]; then
-      echo "Downloading from: $jarUrl"
-    fi
-    wrapperJarPath="$BASE_DIR/.mvn/wrapper/maven-wrapper.jar"
-    if $cygwin; then
-      wrapperJarPath=cygpath --path --windows "$wrapperJarPath"
-    fi
+
 ChatGPT said:
 ChatGPT
 
