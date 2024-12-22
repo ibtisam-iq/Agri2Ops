@@ -1,0 +1,74 @@
+ibtisam@mint-dell:~/git/Agri2Ops/03.Projects/00.Build (LocalOps)/0.1.02-jar_Ekart$ tree -a
+.
+├── .gitignore
+├── .mvn
+│   └── wrapper
+│       └── maven-wrapper.properties
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── project-structure.txt
+├── README.md
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── reljicd
+    │   │           ├── config
+    │   │           │   ├── GlobalExceptionHandler.java
+    │   │           │   ├── MyAccessDeniedHandler.java
+    │   │           │   └── SpringSecurityConfig.java
+    │   │           ├── controller
+    │   │           │   ├── CustomErrorController.java
+    │   │           │   ├── HomeController.java
+    │   │           │   ├── LoginController.java
+    │   │           │   ├── RegistrationController.java
+    │   │           │   └── ShoppingCartController.java
+    │   │           ├── exception
+    │   │           │   └── NotEnoughProductsInStockException.java
+    │   │           ├── model
+    │   │           │   ├── Product.java
+    │   │           │   ├── Role.java
+    │   │           │   └── User.java
+    │   │           ├── repository
+    │   │           │   ├── ProductRepository.java
+    │   │           │   ├── RoleRepository.java
+    │   │           │   └── UserRepository.java
+    │   │           ├── service
+    │   │           │   ├── impl
+    │   │           │   │   ├── ProductServiceImpl.java
+    │   │           │   │   ├── ShoppingCartServiceImpl.java
+    │   │           │   │   └── UserServiceImp.java
+    │   │           │   ├── ProductService.java
+    │   │           │   ├── ShoppingCartService.java
+    │   │           │   └── UserService.java
+    │   │           ├── ShoppingCartApplication.java
+    │   │           └── util
+    │   │               └── Pager.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── sql
+    │       │   └── import-h2.sql
+    │       ├── static
+    │       │   └── css
+    │       │       └── main.css
+    │       └── templates
+    │           ├── 403.html
+    │           ├── error.html
+    │           ├── fragments
+    │           │   ├── footer.html
+    │           │   ├── header.html
+    │           │   ├── pagination.html
+    │           │   └── products.html
+    │           ├── home.html
+    │           ├── login.html
+    │           ├── registration.html
+    │           └── shoppingCart.html
+    └── test
+        └── java
+            └── com
+                └── reljicd
+                    └── ShoppingCartApplicationTests.java
+
+26 directories, 44 files
+
