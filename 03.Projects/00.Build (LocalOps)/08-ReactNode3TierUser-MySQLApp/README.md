@@ -69,6 +69,12 @@ First, you need to set up a MySQL server on your local machine.
    exit;
    ```
 
+**Run the following command to create the database and tables automatically:**
+
+```bash
+mysql -u root -p database/init.sql
+```
+
 6. **Log in to the MySQL shell again with the new password:**
 
    ```bash

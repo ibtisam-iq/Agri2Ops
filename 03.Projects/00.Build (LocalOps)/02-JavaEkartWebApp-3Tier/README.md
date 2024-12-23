@@ -27,6 +27,7 @@ as well as change the port number.
 Go to the root folder of the application and type:
 
 ```bash
+sudo apt-get install openjdk-8-jdk
 mvn package -DskipTests=true
 ```
 
