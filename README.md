@@ -11,7 +11,7 @@ Agri2Ops is not just a repository, but a reflection of my transition as a **DevO
 - **CI/CD Pipelines**  
 - **Automation with Ansible, Terraform, and Jenkins**  
 - **Cloud Infrastructure with AWS, Kubernetes, and Docker**  
-- **Monitoring and Observability with New Relic, Nagios, and Sensu**  
+- **Monitoring and Observability with Nagios**  
 - **Security Best Practices in DevOps**  
 
 This is a living document and will continue to evolve as I learn and work on new projects.  
@@ -26,10 +26,7 @@ This is a living document and will continue to evolve as I learn and work on new
 
 ## 💡 What You’ll Find Here
 
-- **Project Samples**: Code snippets of local & corporate level deployment, and CI/CD pipelines.  
-- **Automation Scripts**: Python and shell scripts for task automation, testing, and monitoring.  
-- **Tools & Documentation**: Guides and documentation for tools like Docker, Kubernetes, Jenkins, and more.  
-- **Personal Insights**: Lessons learned, challenges faced, and tips for success in the IT operations space.
+- **Project Samples**: Code snippets of local & corporate level deployment, and CI/CD pipelines.
 - **Real-time Console Commands and Outputs**: A snapshot of my practical learning journey which serves as both a personal reference and a showcase of my skills.
 
 
