@@ -1,4 +1,5 @@
 # BoardGameDB-Java-3Tier
+![Project Snapshot](./projectSnapshot.png)
 
 ## Description
 
