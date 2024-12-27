@@ -1,5 +1,4 @@
 # BoardGameDB-Java-3Tier
-![Project Snapshot](./projectSnapshot.png)
 
 ## Description
 
@@ -54,3 +53,6 @@ This web application displays lists of board games and their reviews. While anyo
 ## Project Structure
 
 Please refer to `project-structure.txt` for more details.
+
+## Project Snapshot
+![Project Snapshot](./projectSnapshot.png)
