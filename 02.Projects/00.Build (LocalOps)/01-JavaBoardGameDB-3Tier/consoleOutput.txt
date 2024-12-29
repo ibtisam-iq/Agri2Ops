@@ -414,3 +414,30 @@ What Happens if This Fails?
     What Can You Do?
         Ensure the machine has internet access to download the file.
         Pre-check the presence of maven-wrapper.jar in the repository.
+
+ibtisam@lubuntu:~/SilverOps/03. Projects/00. LocalOps$ cd 0.1.01-jar_Boardgame/
+ibtisam@lubuntu:~/SilverOps/03. Projects/00. LocalOps/0.1.01-jar_Boardgame$ ls
+mvnw  mvnw.cmd  pom.xml  README.md  src
+ibtisam@lubuntu:~/SilverOps/03. Projects/00. LocalOps/0.1.01-jar_Boardgame$
+
+ibtisam@lubuntu:~/SilverOps/03. Projects/00. LocalOps/0.1.01-jar_Boardgame$ mvn package
+[INFO] Scanning for projects...
+
+[INFO] Replacing main artifact with repackaged archive
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.7:report (jacoco-site) @ database_service_project ---
+[INFO] Loading execution data file /home/ibtisam/SilverOps/03. Projects/00. LocalOps/0.1.01-jar_Boardgame/target/jacoco.exec
+[INFO] Analyzed bundle 'database_service_project' with 9 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:25 min
+[INFO] Finished at: 2024-12-11T16:05:14+05:00
+
+ibtisam@lubuntu:~/SilverOps/03. Projects/00. LocalOps/0.1.01-jar_Boardgame$ ls
+mvnw  mvnw.cmd  pom.xml  README.md src  target
+ibtisam@lubuntu:~/SilverOps/03. Projects/00. LocalOps/0.1.01-jar_Boardgame$ cd target/
+ibtisam@lubuntu:~/SilverOps/03. Projects/00. LocalOps/0.1.01-jar_Boardgame/target$ ls
+classes                         	database_service_project-0.0.7.jar.original  generated-test-sources  maven-archiver  site          	test-classes
+database_service_project-0.0.7.jar  generated-sources                        	jacoco.exec         	maven-status	surefire-reports
+ibtisam@lubuntu:~/SilverOps/03. Projects/00. LocalOps/0.1.01-jar_Boardgame/target$ java -jar database_service_project-0.0.7.jar
