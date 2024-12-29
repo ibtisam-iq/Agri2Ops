@@ -1,5 +1,3 @@
-### Apache Tomcat: Overview and Usage
-
 # Apache Tomcat 9.0.65 Installation and Configuration Guide
 
 This guide provides step-by-step instructions for installing Apache Tomcat 9.0.65 on a Linux system, configuring the server, and setting up administrative access.
