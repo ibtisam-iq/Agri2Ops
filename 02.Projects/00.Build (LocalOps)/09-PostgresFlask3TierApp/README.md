@@ -88,7 +88,7 @@ To install and set up PostgreSQL, follow these steps:
    ```bash
    sudo -i -u postgres
    ```
-# Access the PostgreSQL shell
+### Access the PostgreSQL shell
    ```bash
    psql
    ```
