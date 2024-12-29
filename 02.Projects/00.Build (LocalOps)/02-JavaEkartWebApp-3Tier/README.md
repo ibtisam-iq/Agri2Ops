@@ -58,3 +58,6 @@ In field **JDBC URL** put
 ```
 jdbc:h2:mem:shopping_cart_db
 ```
+## Project Structure
+
+Please refer to `consoleOutput.txt` for more details. 😊

@@ -7,7 +7,7 @@ project structure:
 ├── public                        # Publicly accessible files (static files, like HTML, images, etc.).
 │   └── index.html                # The main HTML file of the app. React mounts to this file.
 ├── README.md                     # Documentation of the project, usually explaining the purpose, setup, and usage.
-└── src                            # Source code of the application, including components, styles, and other assets.
+└── src                           # Source code of the application, including components, styles, and other assets.
     ├── App.jsx                   # Main component that includes the structure and layout of the app.
     ├── assets                     # Contains images, PDFs, and other static assets.
     │   ├── avatar1.jpg            # Image asset (likely a profile image for the portfolio).
@@ -93,3 +93,20 @@ Since there is no sign of server-side logic or API-related back-end files (like 
 Conclusion:
 
 The suitable name for this project is ReactJSPortfolio, as it accurately reflects that the project is a portfolio website built using React.js.
+
+-----------------------------------------------------------------------------
+
+npm install --omit=dev
+npm start
+
+Compiled successfully!
+
+You can now view portfolio-website in the browser.
+
+  Local:        	http://localhost:3000
+  On Your Network:  http://192.168.1.14:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully

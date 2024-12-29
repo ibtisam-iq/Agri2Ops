@@ -137,7 +137,7 @@ This project is licensed under the Apache License, Version 2.0. See the [LICENSE
 
 ## Project Structure
 
-Please refer to `project-structure.txt` for more details.
+Please refer to `consoleOutput.txt` for more details. 😊
 
 ## Project Snapshot
 ![Project Snapshot](./projectSnapshot.png)
