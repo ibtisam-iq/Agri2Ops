@@ -57,7 +57,7 @@ First, you need to set up a MySQL server on your local machine.
 4. **Set a password for the root user and update the authentication method:**
 
    ```sql
-   ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+   ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'IbtisamOps';
    FLUSH PRIVILEGES;
    ```
 
@@ -72,7 +72,7 @@ First, you need to set up a MySQL server on your local machine.
 **Run the following command to create the database and tables automatically:**
 
 ```bash
-mysql -u root -p database/init.sql
+mysql -u root -p < database/init.sql
 ```
 
 6. **Log in to the MySQL shell again with the new password:**
@@ -167,9 +167,13 @@ After following the setup instructions, you can access the application by naviga
 - **Edit User:** Click the "Edit" button next to a user entry to update their details.
 - **Delete User:** Click the "Delete" button next to a user entry to remove them from the list.
 
-## License
+## Database Configuration
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+`server/config/db.js`
 
+## Project Structure
 
+Please refer to `project-structure.txt` for more details.
 
+## Project Snapshot
+![Project Snapshot](./projectSnapshot.png)
