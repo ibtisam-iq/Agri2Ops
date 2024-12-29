@@ -55,7 +55,10 @@ Before setting up the project, ensure you have the following installed on your m
    ```bash
    pip3 install -r requirements.txt
    ```
-
+5. **Deactivate the virtual environment**
+   ```bash
+   deactivate
+   ```
 ### 2. Installing PostgreSQL
 
 To install and set up PostgreSQL, follow these steps:
@@ -85,7 +88,10 @@ To install and set up PostgreSQL, follow these steps:
    ```bash
    sudo -i -u postgres
    ```
-
+# Access the PostgreSQL shell
+   ```bash
+   psql
+   ```
 2. **Create a new PostgreSQL user:**
 
    ```sql
@@ -121,7 +127,12 @@ To install and set up PostgreSQL, follow these steps:
    ```sql
    GRANT CREATE ON DATABASE my_database TO root;
    ```
-
+```bash
+# Exit the PostgreSQL shell after completing database configuration
+\q
+# Exit the PostgreSQL administrative user session
+exit
+```
 ## Running the Application
 
 Once the environment and database are set up, you can run the application with the following steps:
@@ -140,7 +151,9 @@ Once the environment and database are set up, you can run the application with t
 
    The application will start, and you can access it via the specified host and port in your configuration.
 
-## License
+## Project Structure
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Please refer to `project-structure.txt` for more details.
 
+## Project Snapshot
+![Project Snapshot](./projectSnapshot.png)
