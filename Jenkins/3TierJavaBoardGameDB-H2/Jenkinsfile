@@ -14,25 +14,25 @@ pipeline {
         
         stage('Compile') {
             steps {
-               //dir('Jenkins/3TierJavaBoardGameDB-H2') {
+               dir('Jenkins/3TierJavaBoardGameDB-H2') {
                     sh "mvn compile"
-                
+               }
             }
         }
         
         stage('Test') {
             steps {
-               //dir('Jenkins/3TierJavaBoardGameDB-H2') {
+               dir('Jenkins/3TierJavaBoardGameDB-H2') {
                     sh "mvn test"
-                    
+               }    
             }
         }
         
         stage('Package') {
             steps {
-                //dir('Jenkins/3TierJavaBoardGameDB-H2') {
+                dir('Jenkins/3TierJavaBoardGameDB-H2') {
                     sh "mvn package"
-                
+                }
             }
         }
         
