@@ -9,8 +9,6 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/ibtisamops/Agri2Ops.git'
-                    dir('Jenkins/3TierJavaBoardGameDB-H2') {
-                }
             }    
         }
         
