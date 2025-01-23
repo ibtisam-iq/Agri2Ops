@@ -19,7 +19,7 @@ pipeline{
         stage('Build') {
             steps {
                 dir('SonarQube/Nodejs-jest') {
-                    nodejs('nodejs20') {
+                    nodejs('nodejs23') {
                         sh 'npm install'
                     }    
                 }
@@ -28,7 +28,7 @@ pipeline{
         stage('Test') {
             steps {
                 dir('SonarQube/Nodejs-jest') {
-                    nodejs('nodejs20') {
+                    nodejs('nodejs23') {
                         sh 'npm run test' // test is the script name in package.json, that's it is written as npm `run` test
                     }
                 }
